@@ -4,202 +4,254 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ikram Ullah Khan</title>
-  <meta name="description" content="AI/ML Research Engineer — Physics-informed ML, Quantum ML, Industrial Simulation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
 
+    /* ─── Reset ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { font-size: 16px; }
+    /* ─── Root ─── */
+    :root {
+      --text:    #1c1c1c;
+      --muted:   #666;
+      --light:   #999;
+      --rule:    #e4e4e4;
+      --link:    #1772d0;
+      --hover:   #f09228;
+      --max:     780px;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
 
     body {
-      font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
       font-weight: 400;
-      font-size: 0.96rem;
-      line-height: 1.72;
-      color: #222;
+      font-size: 0.945rem;
+      line-height: 1.75;
+      color: var(--text);
       background: #fff;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    .page {
-      max-width: 800px;
+    /* ─── Links ─── */
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--hover); }
+
+    /* ─── Page wrapper ─── */
+    .wrap {
+      max-width: var(--max);
       margin: 0 auto;
-      padding: 48px 28px 80px;
+      padding: 56px 28px 96px;
     }
 
-    /* ── Links ── */
-    a {
-      color: #1772d0;
-      text-decoration: none;
+    /* ════════════════════════════════
+       HEADER
+    ════════════════════════════════ */
+    .hdr {
+      display: flex;
+      align-items: flex-start;
+      gap: 48px;
+      margin-bottom: 56px;
     }
-    a:hover { color: #f09228; }
 
-    /* ══════════════════════════════
-       HEADER — same table layout as Jon Barron / Dominik
-    ══════════════════════════════ */
-    .header-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 44px;
+    /* Photo — large, like Minghao */
+    .hdr-photo {
+      flex-shrink: 0;
+      width: 200px;
     }
-    .header-table td { vertical-align: middle; padding: 0; }
-
-    .col-bio   { width: 63%; padding-right: 32px; }
-    .col-photo { width: 37%; text-align: center; }
-
-    .col-photo img {
-      width: 160px;
-      height: 160px;
+    .hdr-photo img {
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      display: inline-block;
+      object-position: top center;
+      display: block;
     }
+
+    /* Bio column */
+    .hdr-bio { flex: 1; min-width: 0; }
 
     h1 {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 1.85rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 2.15rem;
       font-weight: 600;
-      letter-spacing: -0.015em;
-      line-height: 1.15;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
       color: #111;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
-    .tagline {
-      font-size: 0.88rem;
-      color: #777;
-      font-weight: 400;
-      margin-bottom: 18px;
+    .hdr-sub {
+      font-size: 0.875rem;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 20px;
       letter-spacing: 0.01em;
     }
 
-    .bio-text {
-      font-size: 0.95rem;
+    .bio p {
+      font-size: 0.945rem;
       color: #333;
-      line-height: 1.72;
-      margin-bottom: 18px;
+      line-height: 1.78;
+      margin-bottom: 11px;
     }
+    .bio p:last-child { margin-bottom: 0; }
 
-    .bio-text p { margin-bottom: 10px; }
-    .bio-text p:last-child { margin-bottom: 0; }
-
-    .contact-links {
+    /* Icon links row — like Minghao */
+    .icon-links {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       gap: 6px 18px;
+      margin-top: 20px;
+    }
+    .icon-links a {
       font-size: 0.875rem;
+      color: var(--muted);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1px;
+      transition: color .15s, border-color .15s;
     }
-    .contact-links a {
-      color: #1772d0;
+    .icon-links a:hover {
+      color: var(--hover);
+      border-color: var(--hover);
     }
-    .contact-links a:hover { color: #f09228; }
+    .icon-links .sep {
+      color: var(--rule);
+      font-size: 0.8rem;
+      user-select: none;
+    }
 
-    /* ══════════════════════════════
-       SECTIONS
-    ══════════════════════════════ */
-    section {
-      margin-bottom: 40px;
-    }
+    /* ════════════════════════════════
+       SECTION
+    ════════════════════════════════ */
+    section { margin-bottom: 48px; }
 
     section h2 {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 1.2rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.35rem;
       font-weight: 600;
       color: #111;
-      margin-bottom: 16px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid #e0e0e0;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--rule);
     }
 
-    /* ── Publication entry ── */
+    /* ════════════════════════════════
+       PUBLICATION / PROJECT ENTRY
+    ════════════════════════════════ */
     .pub {
-      margin-bottom: 26px;
-      padding-left: 0;
+      display: flex;
+      gap: 0;
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #f2f2f2;
     }
-    .pub:last-child { margin-bottom: 0; }
+    .pub:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .pub-body { flex: 1; min-width: 0; }
 
     .pub-title {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 0.975rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #111;
-      line-height: 1.45;
-      margin-bottom: 3px;
+      line-height: 1.4;
+      margin-bottom: 4px;
     }
     .pub-title a { color: #111; }
-    .pub-title a:hover { color: #1772d0; }
+    .pub-title a:hover { color: var(--link); }
 
     .pub-authors {
       font-size: 0.875rem;
-      color: #555;
+      color: var(--muted);
       margin-bottom: 2px;
+      line-height: 1.5;
     }
-    .pub-authors strong { color: #222; font-weight: 500; }
+    .pub-authors strong {
+      color: var(--text);
+      font-weight: 500;
+    }
 
     .pub-venue {
       font-size: 0.875rem;
-      color: #555;
-      margin-bottom: 5px;
+      color: var(--muted);
+      margin-bottom: 8px;
     }
-    .pub-venue em { font-style: italic; }
-    .pub-venue .status {
+    .pub-venue em { font-style: italic; color: #555; }
+    .pub-venue .tag {
       font-style: normal;
       font-weight: 500;
-      color: #333;
+      color: #444;
     }
 
     .pub-desc {
       font-size: 0.9rem;
       color: #444;
-      line-height: 1.65;
-      margin-bottom: 5px;
+      line-height: 1.68;
+      margin-bottom: 8px;
     }
 
     .pub-links {
-      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+      font-size: 0.84rem;
     }
-    .pub-links a {
-      color: #1772d0;
-      margin-right: 14px;
-    }
-    .pub-links a:hover { color: #f09228; }
+    .pub-links a { color: var(--link); }
+    .pub-links a:hover { color: var(--hover); }
 
-    /* ── Experience entry ── */
+    /* ════════════════════════════════
+       EXPERIENCE ENTRY
+    ════════════════════════════════ */
     .exp {
-      margin-bottom: 26px;
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #f2f2f2;
     }
-    .exp:last-child { margin-bottom: 0; }
+    .exp:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
 
-    .exp-header {
+    .exp-row {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: 2px 12px;
       margin-bottom: 2px;
     }
 
     .exp-org {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 0.975rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #111;
+      line-height: 1.3;
     }
 
     .exp-date {
       font-size: 0.845rem;
-      color: #999;
+      color: var(--light);
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .exp-role {
       font-size: 0.875rem;
-      color: #555;
-      margin-bottom: 7px;
+      color: var(--muted);
       font-style: italic;
+      margin-bottom: 9px;
     }
 
     .exp-list {
@@ -210,130 +262,139 @@
     .exp-list li {
       font-size: 0.9rem;
       color: #444;
-      line-height: 1.65;
-      padding-left: 16px;
+      line-height: 1.68;
+      padding-left: 18px;
       position: relative;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
     .exp-list li::before {
       content: "–";
       position: absolute;
       left: 0;
-      color: #bbb;
+      color: #ccc;
     }
 
-    /* ── Skills grid ── */
-    .skills-table {
+    /* ════════════════════════════════
+       SKILLS TABLE
+    ════════════════════════════════ */
+    .skills {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.9rem;
     }
-    .skills-table tr td {
-      padding: 4px 0;
+    .skills td {
+      padding: 5px 0;
       vertical-align: top;
-      line-height: 1.55;
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
-    .skills-table .sk-label {
-      width: 130px;
-      color: #888;
-      font-size: 0.845rem;
-      padding-right: 16px;
+    .skills .sk-label {
+      width: 128px;
+      color: var(--light);
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding-right: 20px;
+      padding-top: 7px;
       white-space: nowrap;
     }
-    .skills-table .sk-val {
-      color: #333;
-    }
+    .skills .sk-val { color: #444; }
 
-    /* ── Education ── */
-    .edu-header {
+    /* ════════════════════════════════
+       EDUCATION
+    ════════════════════════════════ */
+    .edu-row {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: 2px 12px;
+      margin-bottom: 2px;
     }
     .edu-org {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 0.975rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #111;
     }
     .edu-date {
       font-size: 0.845rem;
-      color: #999;
+      color: var(--light);
     }
     .edu-degree {
       font-size: 0.875rem;
-      color: #555;
+      color: var(--muted);
       font-style: italic;
       margin-bottom: 6px;
     }
-    .edu-note {
+    .edu-certs {
       font-size: 0.875rem;
-      color: #666;
+      color: #555;
     }
 
-    /* ── Mobile ── */
-    @media (max-width: 580px) {
-      .header-table,
-      .header-table tbody,
-      .header-table tr,
-      .header-table td { display: block; width: 100%; }
-      .col-photo { text-align: left; margin-bottom: 20px; }
-      .col-photo img { width: 100px; height: 100px; }
-      .col-bio { padding-right: 0; }
-      h1 { font-size: 1.5rem; }
+    /* ─── Mobile ─── */
+    @media (max-width: 600px) {
+      .hdr { flex-direction: column-reverse; gap: 20px; }
+      .hdr-photo { width: 100%; text-align: center; }
+      .hdr-photo img { width: 130px; height: 130px; margin: 0 auto; }
+      h1 { font-size: 1.65rem; }
+      .skills .sk-label { width: 90px; }
     }
 
   </style>
 </head>
 
 <body>
-<div class="page">
-
+<div class="wrap">
 
   <!-- ══════════ HEADER ══════════ -->
-  <table class="header-table">
-    <tbody><tr>
+  <header class="hdr">
 
-      <td class="col-bio">
-        <h1>Ikram Ullah Khan</h1>
-        <p class="tagline">AI/ML Research Engineer &nbsp;&middot;&nbsp; Physics-informed ML &nbsp;&middot;&nbsp; Quantum ML</p>
-
-        <div class="bio-text">
-          <p>
-            I work at the intersection of physics-informed machine learning, quantum computing,
-            and neural signal processing. My research focuses on building reliable ML systems for
-            complex physical and biological domains — from seismic simulation to EEG analysis.
-          </p>
-          <p>
-            I am first author on a paper accepted at
-            <a href="https://github.com/IkramAlgo/QGAN-Sleep-EEG">IEEE/IFIP DSN Workshops 2026</a>,
-            where I developed a 6-qubit hybrid quantum-classical GAN for EEG sleep stage
-            classification — achieving a 71% improvement in StdMAE on IBM QPU hardware under
-            NISQ conditions. I am currently developing a self-supervised physics-informed
-            framework for HFO recovery from scalp EEG, in collaboration with a neuroscience
-            researcher at UTSA.
-          </p>
-          <p>
-            I am actively seeking research and R&amp;D roles at the intersection of physical
-            simulation and machine learning. Open to relocation.
-          </p>
-        </div>
-
-        <div class="contact-links">
-          <a href="mailto:ikramkhan.research@outlook.com">ikramkhan.research@outlook.com</a>
-          <a href="https://github.com/IkramAlgo">GitHub</a>
-          <a href="https://linkedin.com/in/ikramkhan101">LinkedIn</a>
-        </div>
-      </td>
-
-      <td class="col-photo">
+    <div class="hdr-photo">
+      <a href="images/ikram_pic.png">
         <img src="images/ikram_pic.png" alt="Ikram Ullah Khan">
-      </td>
+      </a>
+    </div>
 
-    </tr></tbody>
-  </table>
+    <div class="hdr-bio">
+      <h1>Ikram Ullah Khan</h1>
+      <p class="hdr-sub">AI/ML Research Engineer &nbsp;&middot;&nbsp; Pakistan &nbsp;&middot;&nbsp; Open to relocation</p>
+
+      <div class="bio">
+        <p>
+          I work at the intersection of <strong>physics-informed machine learning</strong>,
+          <strong>quantum computing</strong>, and <strong>neural signal processing</strong>.
+          My research focuses on building reliable ML systems for complex physical and biological
+          domains — from industrial seismic simulation to EEG-based brain signal recovery.
+        </p>
+        <p>
+          I am first author on a paper accepted at
+          <a href="https://github.com/IkramAlgo/QGAN-Sleep-EEG">IEEE/IFIP DSN Workshops 2026</a>,
+          where I developed a 6-qubit hybrid quantum-classical GAN for EEG sleep stage
+          classification — achieving a <strong>71% improvement in StdMAE</strong> on IBM QPU
+          hardware under NISQ conditions, and demonstrating a novel noise-induced regularization effect.
+          I am currently developing a self-supervised, physics-informed framework for
+          high-frequency oscillation recovery from scalp EEG, in collaboration with a neuroscience
+          researcher at UTSA.
+        </p>
+        <p>
+          I am actively seeking <strong>research and R&amp;D roles</strong> at the intersection
+          of physical simulation and machine learning. Open to relocation.
+        </p>
+      </div>
+
+      <div class="icon-links">
+        <a href="mailto:ikramkhan.research@outlook.com">Email</a>
+        <span class="sep">/</span>
+        <a href="https://github.com/IkramAlgo" target="_blank">GitHub</a>
+        <span class="sep">/</span>
+        <a href="https://linkedin.com/in/ikramkhan101" target="_blank">LinkedIn</a>
+        <span class="sep">/</span>
+        <a href="tel:+923080047065">+92 308 004 7065</a>
+      </div>
+    </div>
+
+  </header>
 
 
   <!-- ══════════ PUBLICATIONS ══════════ -->
@@ -341,43 +402,48 @@
     <h2>Publications</h2>
 
     <div class="pub">
-      <div class="pub-title">
-        <a href="https://github.com/IkramAlgo/QGAN-Sleep-EEG">
-          Quantum Generative Adversarial Networks for EEG-Based Sleep Stage Classification in Noiseless and Noisy Scenarios
-        </a>
-      </div>
-      <div class="pub-authors">
-        <strong>Ikram Ullah Khan</strong>, Sthefanie J. G. Passo, John J. Prevost
-      </div>
-      <div class="pub-venue">
-        <em>FORCE 2026, IEEE/IFIP DSN Workshops</em> &nbsp;&middot;&nbsp;
-        <span class="status">Accepted</span>
-      </div>
-      <div class="pub-desc">
-        A 6-qubit hybrid QGAN (PennyLane + Qiskit) benchmarked against classical GANs on EEG sleep
-        classification under NISQ conditions. Achieved a 71% improvement in StdMAE (best: 0.064) and
-        identified a noise-induced regularization effect — a novel finding with direct implications for
-        near-term quantum hardware reliability.
-      </div>
-      <div class="pub-links">
-        <a href="https://github.com/IkramAlgo/QGAN-Sleep-EEG">code</a>
+      <div class="pub-body">
+        <div class="pub-title">
+          <a href="https://github.com/IkramAlgo/QGAN-Sleep-EEG">
+            Quantum Generative Adversarial Networks for EEG-Based Sleep Stage Classification in Noiseless and Noisy Scenarios
+          </a>
+        </div>
+        <div class="pub-authors">
+          <strong>Ikram Ullah Khan</strong>, Sthefanie J. G. Passo, John J. Prevost
+        </div>
+        <div class="pub-venue">
+          <em>FORCE 2026, IEEE/IFIP DSN Workshops</em> &nbsp;&middot;&nbsp;
+          <span class="tag">Accepted</span>
+        </div>
+        <div class="pub-desc">
+          A 6-qubit hybrid QGAN (PennyLane + Qiskit) benchmarked against classical GANs on EEG
+          sleep classification under NISQ conditions. Achieved a 71% improvement in StdMAE
+          (best: 0.064) and identified a noise-induced regularization effect — a novel finding
+          with direct implications for near-term quantum hardware reliability.
+          Validated on IBM QPU hardware.
+        </div>
+        <div class="pub-links">
+          <a href="https://github.com/IkramAlgo/QGAN-Sleep-EEG">GitHub</a>
+        </div>
       </div>
     </div>
 
     <div class="pub">
-      <div class="pub-title">
-        Stochastic Computing Neural Network Approach for the Fractional-Order Host Transmission Dynamics Model of Chikungunya
-      </div>
-      <div class="pub-authors">
-        <strong>Ikram Ullah Khan</strong>, et al.
-      </div>
-      <div class="pub-venue">
-        <em>Engineering Reports</em>, Wiley &nbsp;&middot;&nbsp;
-        <span class="status">Under review</span>
-      </div>
-      <div class="pub-desc">
-        A stochastic computing neural network framework for modeling fractional-order host
-        transmission dynamics of Chikungunya disease.
+      <div class="pub-body">
+        <div class="pub-title">
+          Stochastic Computing Neural Network Approach for the Fractional-Order Host Transmission Dynamics Model of Chikungunya
+        </div>
+        <div class="pub-authors">
+          <strong>Ikram Ullah Khan</strong>, et al.
+        </div>
+        <div class="pub-venue">
+          <em>Engineering Reports</em>, Wiley &nbsp;&middot;&nbsp;
+          <span class="tag">Under review</span>
+        </div>
+        <div class="pub-desc">
+          A stochastic computing neural network framework for modeling fractional-order host
+          transmission dynamics of Chikungunya disease.
+        </div>
       </div>
     </div>
 
@@ -389,7 +455,7 @@
     <h2>Research &amp; Experience</h2>
 
     <div class="exp">
-      <div class="exp-header">
+      <div class="exp-row">
         <span class="exp-org">University of Texas at San Antonio</span>
         <span class="exp-date">Feb 2026 – Present</span>
       </div>
@@ -402,7 +468,7 @@
     </div>
 
     <div class="exp">
-      <div class="exp-header">
+      <div class="exp-row">
         <span class="exp-org">Neodustria</span>
         <span class="exp-date">Sep 2025 – Jan 2026</span>
       </div>
@@ -416,7 +482,7 @@
     </div>
 
     <div class="exp">
-      <div class="exp-header">
+      <div class="exp-row">
         <span class="exp-org">Zyeron</span>
         <span class="exp-date">Jul 2024 – Aug 2025</span>
       </div>
@@ -435,41 +501,55 @@
     <h2>Projects</h2>
 
     <div class="pub">
-      <div class="pub-title">
-        <a href="https://github.com/IkramAlgo/QGAN-Sleep-EEG">Quantum GAN for Sleep EEG Classification</a>
-      </div>
-      <div class="pub-venue">
-        <em>FORCE 2026, IEEE/IFIP DSN Workshops</em> &nbsp;&middot;&nbsp; <span class="status">Accepted</span>
-      </div>
-      <div class="pub-desc">
-        6-qubit hybrid QGAN benchmarked against classical GANs in noiseless and noisy NISQ settings.
-        71% improvement in StdMAE. Demonstrates noise-induced regularization — a novel finding for
-        quantum robustness research.
-      </div>
-      <div class="pub-links">
-        <a href="https://github.com/IkramAlgo/QGAN-Sleep-EEG">code</a>
-      </div>
-    </div>
-
-    <div class="pub">
-      <div class="pub-title">
-        <a href="https://github.com/IkramAlgo/hfo-recover">HFO-Recover — Sleep-Stage-Aware HFO Recovery from Scalp EEG</a>
-      </div>
-      <div class="pub-desc">
-        Self-supervised, physics-informed framework for high-frequency oscillation recovery from scalp
-        EEG (ANPHYSleep, 1 kHz) with sleep-stage conditioning. Active research collaboration with a
-        neuroscience researcher at UTSA.
-      </div>
-      <div class="pub-links">
-        <a href="https://github.com/IkramAlgo/hfo-recover">code</a>
+      <div class="pub-body">
+        <div class="pub-title">
+          <a href="https://github.com/IkramAlgo/QGAN-Sleep-EEG">
+            Quantum GAN for Sleep EEG Classification
+          </a>
+        </div>
+        <div class="pub-venue">
+          <em>FORCE 2026, IEEE/IFIP DSN Workshops</em> &nbsp;&middot;&nbsp;
+          <span class="tag">Accepted</span>
+        </div>
+        <div class="pub-desc">
+          6-qubit hybrid QGAN benchmarked against classical GANs in noiseless and noisy NISQ
+          settings. 71% improvement in StdMAE. Demonstrates noise-induced regularization —
+          a novel finding for quantum robustness research.
+        </div>
+        <div class="pub-links">
+          <a href="https://github.com/IkramAlgo/QGAN-Sleep-EEG">GitHub</a>
+        </div>
       </div>
     </div>
 
     <div class="pub">
-      <div class="pub-title">Industrial AI Scenario Modeling — Seismic Drift &amp; Brake Analytics</div>
-      <div class="pub-desc">
-        End-to-end physics-informed ML pipelines for structural and automotive sensor data analysis.
-        Deployed in production at Neodustria with 18% improvement in operational efficiency.
+      <div class="pub-body">
+        <div class="pub-title">
+          <a href="https://github.com/IkramAlgo/hfo-recover">
+            HFO-Recover — Sleep-Stage-Aware HFO Recovery from Scalp EEG
+          </a>
+        </div>
+        <div class="pub-desc">
+          Self-supervised, physics-informed framework for high-frequency oscillation recovery
+          from scalp EEG (ANPHYSleep, 1 kHz) with sleep-stage conditioning. Active research
+          collaboration with a neuroscience researcher at UTSA.
+        </div>
+        <div class="pub-links">
+          <a href="https://github.com/IkramAlgo/hfo-recover">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-body">
+        <div class="pub-title">
+          Industrial AI Scenario Modeling — Seismic Drift &amp; Brake Analytics
+        </div>
+        <div class="pub-desc">
+          End-to-end physics-informed ML pipelines for structural and automotive sensor data
+          analysis. Deployed in production at Neodustria with 18% improvement in operational
+          efficiency for predictive maintenance planning.
+        </div>
       </div>
     </div>
 
@@ -479,7 +559,7 @@
   <!-- ══════════ SKILLS ══════════ -->
   <section>
     <h2>Technical Skills</h2>
-    <table class="skills-table">
+    <table class="skills">
       <tbody>
         <tr>
           <td class="sk-label">Core</td>
@@ -514,12 +594,12 @@
   <section>
     <h2>Education</h2>
 
-    <div class="edu-header">
+    <div class="edu-row">
       <span class="edu-org">University of the Punjab, Pakistan</span>
       <span class="edu-date">2020 – 2024</span>
     </div>
     <div class="edu-degree">BS in Computer Science</div>
-    <div class="edu-note">
+    <div class="edu-certs">
       Certifications: Google ML Crash Course &nbsp;&middot;&nbsp;
       Stanford ML &amp; Practical Data Science (Coursera) &nbsp;&middot;&nbsp;
       Generative AI and LLM Fundamentals
