@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services — Ikram Ullah Khan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text:  #1c1c1c;
+      --muted: #666;
+      --light: #999;
+      --rule:  #e4e4e4;
+      --link:  #1772d0;
+      --hover: #f09228;
+      --max:   780px;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 0.945rem;
+      line-height: 1.75;
+      color: var(--text);
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--hover); }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 56px 28px 96px;
+    }
+
+    /* ── nav breadcrumb ── */
+    .breadcrumb {
+      font-size: 0.845rem;
+      color: var(--light);
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--hover); }
+    .breadcrumb .sep { color: var(--rule); }
+
+    /* ── page header ── */
+    .page-hdr { margin-bottom: 48px; }
+
+    .page-hdr h1 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 2.15rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #111;
+      margin-bottom: 8px;
+    }
+
+    .page-hdr .sub {
+      font-size: 0.875rem;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 18px;
+      letter-spacing: 0.01em;
+    }
+
+    .page-hdr .intro {
+      font-size: 0.945rem;
+      color: #333;
+      line-height: 1.78;
+      max-width: 640px;
+    }
+
+    /* ── section ── */
+    section { margin-bottom: 52px; }
+
+    section h2 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #111;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── service entry (mirrors .pub style) ── */
+    .svc {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #f2f2f2;
+    }
+    .svc:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .svc-title {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: #111;
+      line-height: 1.35;
+      margin-bottom: 3px;
+    }
+
+    .svc-tag {
+      font-size: 0.845rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .svc-tag .badge {
+      font-style: normal;
+      font-weight: 500;
+      color: #444;
+    }
+
+    .svc-desc {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .svc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 12px;
+    }
+    .svc-list li {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.65;
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 3px;
+    }
+    .svc-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #ccc;
+    }
+
+    .svc-cta {
+      font-size: 0.84rem;
+    }
+
+    /* ── proof strip ── */
+    .proof-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border: 1px solid var(--rule);
+      margin-bottom: 48px;
+    }
+
+    .proof-item {
+      flex: 1;
+      min-width: 160px;
+      padding: 18px 20px;
+      border-right: 1px solid var(--rule);
+    }
+    .proof-item:last-child { border-right: none; }
+
+    .proof-num {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #111;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .proof-label {
+      font-size: 0.78rem;
+      color: var(--light);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      line-height: 1.4;
+    }
+
+    /* ── process ── */
+    .process-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: step;
+    }
+    .process-list li {
+      counter-increment: step;
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.65;
+    }
+    .process-list li::before {
+      content: counter(step);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--light);
+      min-width: 20px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+    .process-list li strong { color: #222; font-weight: 500; }
+
+    /* ── contact box ── */
+    .contact-box {
+      border: 1px solid var(--rule);
+      padding: 28px 28px;
+      margin-top: 8px;
+    }
+
+    .contact-box p {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.72;
+      margin-bottom: 14px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 20px;
+      font-size: 0.875rem;
+    }
+    .contact-links a { color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 1px; transition: color .15s, border-color .15s; }
+    .contact-links a:hover { color: var(--hover); border-color: var(--hover); }
+
+    /* ── availability note ── */
+    .avail {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+    .avail::before {
+      content: '';
+      display: block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #3aaa6e;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      .proof-strip { flex-direction: column; }
+      .proof-item { border-right: none; border-bottom: 1px solid var(--rule); }
+      .proof-item:last-child { border-bottom: none; }
+    }
+
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="index.html">Ikram Ullah Khan</a>
+    <span class="sep">/</span>
+    <span>Services</span>
+  </nav>
+
+  <!-- page header -->
+  <div class="page-hdr">
+    <h1>Contract &amp; Consulting Work</h1>
+    <p class="sub">Applied AI Engineer &nbsp;&middot;&nbsp; Available for project-based engagements</p>
+    <p class="intro">
+      I take a small number of contracts alongside my research. If your team needs
+      production ML pipelines, MLOps infrastructure, or guidance on physics-informed
+      or quantum ML — send a brief description of your project and I will get back to you.
+    </p>
+  </div>
+
+  <!-- availability -->
+  <div class="avail">Currently accepting new projects &nbsp;&middot;&nbsp; Open to remote and on-site engagements</div>
+
+  <!-- proof numbers -->
+  <div class="proof-strip">
+    <div class="proof-item">
+      <div class="proof-num">25%</div>
+      <div class="proof-label">Predictive accuracy improvement (Neodustria)</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">50+</div>
+      <div class="proof-label">Hours/month saved via ML orchestration</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">71%</div>
+      <div class="proof-label">StdMAE improvement — IEEE/IFIP DSN-W 2026</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">18%</div>
+      <div class="proof-label">Accuracy gain — NLP automation (Zyeron)</div>
+    </div>
+  </div>
+
+  <!-- services -->
+  <section>
+    <h2>What I offer</h2>
+
+    <div class="svc">
+      <div class="svc-title">Predictive Maintenance ML System</div>
+      <div class="svc-tag">
+        End-to-end project &nbsp;&middot;&nbsp;
+        <span class="badge">Industrial · Automotive · Structural</span>
+      </div>
+      <div class="svc-desc">
+        Full pipeline from raw sensor data to a deployed prediction API. I have delivered
+        this in production for seismic drift and automotive brake dynamics simulation at
+        Neodustria — improving predictive accuracy by 25%. Well-suited for engineering teams
+        that need ML models grounded in physical domain knowledge, not black-box solutions.
+      </div>
+      <ul class="svc-list">
+        <li>Data pipeline design and feature engineering from sensor data</li>
+        <li>Physics-informed or LSTM model training and evaluation</li>
+        <li>FastAPI REST endpoint with Docker containerization</li>
+        <li>Prefect-based orchestration and scheduling</li>
+        <li>GitHub CI/CD deployment to AWS or Scaleway</li>
+        <li>Documentation and handoff support</li>
+      </ul>
+      <div class="svc-cta"><a href="mailto:ikramkhan.research@outlook.com?subject=Predictive Maintenance ML — Project Enquiry">Send a project enquiry →</a></div>
+    </div>
+
+    <div class="svc">
+      <div class="svc-title">MLOps Stack Setup</div>
+      <div class="svc-tag">
+        Infrastructure project &nbsp;&middot;&nbsp;
+        <span class="badge">For teams with models but no production pipeline</span>
+      </div>
+      <div class="svc-desc">
+        Many ML teams have working models but no reliable way to run, retrain, or monitor them
+        in production. I set up the full orchestration, containerization, and deployment layer —
+        so models run on a schedule without manual intervention.
+      </div>
+      <ul class="svc-list">
+        <li>Prefect pipeline setup with scheduling and monitoring</li>
+        <li>Dockerized training and inference environments</li>
+        <li>GitHub Actions CI/CD workflow</li>
+        <li>FastAPI model serving layer</li>
+        <li>Cloud deployment (AWS / Scaleway)</li>
+      </ul>
+      <div class="svc-cta"><a href="mailto:ikramkhan.research@outlook.com?subject=MLOps Setup — Project Enquiry">Send a project enquiry →</a></div>
+    </div>
+
+    <div class="svc">
+      <div class="svc-title">Quantum ML Research Consulting</div>
+      <div class="svc-tag">
+        Advisory &amp; prototyping &nbsp;&middot;&nbsp;
+        <span class="badge">Academic labs · Research teams · Quantum startups</span>
+      </div>
+      <div class="svc-desc">
+        I am first author on a paper accepted at IEEE/IFIP DSN Workshops 2026 on hybrid
+        quantum-classical GANs for EEG classification, with experiments validated on IBM QPU
+        hardware. I advise on NISQ-era architectures, noise mitigation strategies, PennyLane
+        and Qiskit pipelines, and experiment design for near-term quantum systems.
+      </div>
+      <ul class="svc-list">
+        <li>Feasibility study and literature review</li>
+        <li>PennyLane / Qiskit prototype development</li>
+        <li>IBM QPU experiment design and execution</li>
+        <li>NISQ noise mitigation strategy</li>
+        <li>Paper co-authorship (by agreement)</li>
+      </ul>
+      <div class="svc-cta"><a href="mailto:ikramkhan.research@outlook.com?subject=Quantum ML Consulting — Enquiry">Send an enquiry →</a></div>
+    </div>
+
+  </section>
+
+  <!-- process -->
+  <section>
+    <h2>How it works</h2>
+    <ol class="process-list">
+      <li><strong>Send a brief description</strong> of your project, domain, and timeline. A few sentences is enough to start.</li>
+      <li><strong>Short call or email exchange</strong> to clarify scope, data availability, and what a useful deliverable looks like.</li>
+      <li><strong>Proposal with scope and timeline</strong> — I work on fixed-scope projects where the deliverable is clear to both sides.</li>
+      <li><strong>Delivery with documentation</strong> — all code is version-controlled and handed off with notes for your team.</li>
+    </ol>
+  </section>
+
+  <!-- contact -->
+  <section>
+    <h2>Get in touch</h2>
+    <div class="contact-box">
+      <p>
+        The best way to start is a short email describing what you're working on.
+        I reply within 1–2 business days. I am based in Pakistan and available for
+        remote work globally, as well as on-site engagements.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:ikramkhan.research@outlook.com">ikramkhan.research@outlook.com</a>
+        <a href="https://linkedin.com/in/ikramkhan101" target="_blank">LinkedIn</a>
+        <a href="https://github.com/IkramAlgo" target="_blank">GitHub</a>
+        <a href="tel:+923080047065">+92 308 004 7065</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
